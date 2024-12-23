@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "command-utils",
+	"version": "${version}",
+	"name": "Command Utils",
+	"description": "Command Utilities Mod by jhuanglululu",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/command-utils/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"jhuanglululu.cmut.CommandUtils"
+		],
+		"fabric-datagen": [
+			"jhuanglululu.cmut.CommandUtilsDataGenerator"
+		],
+		"client": [
+			"jhuanglululu.cmut.CommandUtilsClient"
+		]
+	},
+	"mixins": [
+		"command-utils.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.21.3",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
