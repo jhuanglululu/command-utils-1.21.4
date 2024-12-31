@@ -3,7 +3,8 @@
   "package": "jhuanglululu.cmut.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "loader.FunctionMixin"
+    "loader.FunctionMixin",
+    "loader.ServerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

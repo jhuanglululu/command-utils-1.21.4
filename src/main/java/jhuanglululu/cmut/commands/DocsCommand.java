@@ -38,7 +38,7 @@ public class DocsCommand {
             }
         } catch (IOException e) {
             LOGGER.info(e.getMessage());
-            return;
+            context.getSource().sendError(Text.literal(e.getMessage()));
         }
     }
 

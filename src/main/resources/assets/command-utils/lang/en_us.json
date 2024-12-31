@@ -4,5 +4,7 @@
 
   "command-utils.argument.filepath.exception": "Invalid file path",
 
-  "command-utils.command.listfunction.output.hover": "Read docs for "
+  "command-utils.command.listfunction.output.hover": "Read docs for ",
+
+  "command-utils.error.parse-function": "Failed to parse function: %s"
 }
