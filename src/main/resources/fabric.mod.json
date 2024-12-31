@@ -5,7 +5,7 @@
 	"name": "Command Utils",
 	"description": "Command Utilities Mod by jhuanglululu",
 	"authors": [
-		"Me!"
+		"jhuanglululu"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
@@ -14,6 +14,7 @@
 	"license": "CC0-1.0",
 	"icon": "assets/command-utils/icon.png",
 	"environment": "*",
+	"accessWidener": "command-utils.accesswidener",
 	"entrypoints": {
 		"main": [
 			"jhuanglululu.cmut.CommandUtils"
@@ -23,6 +24,9 @@
 		],
 		"client": [
 			"jhuanglululu.cmut.CommandUtilsClient"
+		],
+		"modmenu": [
+			"jhuanglululu.cmut.config.ModMenuIntegration"
 		]
 	},
 	"mixins": [
@@ -30,7 +34,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.16.9",
-		"minecraft": "~1.21.3",
+		"minecraft": "~1.21.4",
 		"java": ">=21",
 		"fabric-api": "*"
 	},

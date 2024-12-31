@@ -1,0 +1,4 @@
+accessWidener	v1 named
+mutable field net/minecraft/command/argument/ScoreHolderArgumentType SUGGESTION_PROVIDER Lcom/mojang/brigadier/suggestion/SuggestionProvider;
+mutable field net/minecraft/server/command/FunctionCommand SUGGESTION_PROVIDER Lcom/mojang/brigadier/suggestion/SuggestionProvider;
+accessible method net/minecraft/util/Identifier <init> (Ljava/lang/String;Ljava/lang/String;)V

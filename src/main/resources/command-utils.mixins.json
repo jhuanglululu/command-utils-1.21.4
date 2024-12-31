@@ -1,11 +1,11 @@
 {
-	"required": true,
-	"package": "jhuanglululu.cmut.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-		"ExampleMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
-	}
+  "required": true,
+  "package": "jhuanglululu.cmut.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "loader.FunctionMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
 }
