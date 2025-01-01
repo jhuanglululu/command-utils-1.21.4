@@ -5,6 +5,10 @@
   "command-utils.argument.filepath.exception": "Invalid file path",
 
   "command-utils.command.listfunction.output.hover": "Read docs for ",
+  "command-utils.command.docs.output.header": " Function Summary ",
+  "command-utils.command.docs.output.name": "Name: ",
+  "command-utils.command.docs.output.folder": "Folder: ",
+  "command-utils.command.docs.output.hover.folder": "List all function inside: ",
 
   "command-utils.error.parse-function": "Failed to parse function: %s"
 }

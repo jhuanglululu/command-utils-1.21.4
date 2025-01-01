@@ -9,11 +9,28 @@ public class LongText {
 
     public LongText() { throw new AssertionError(); }
 
-    public static Text of(List<MutableText> contents) {
-        MutableText result = Text.literal("");
+    public static MutableText of(List<MutableText> contents) {
+        if (contents.size() == 1)  return contents.getFirst();
 
-        for (MutableText content : contents) {
+        MutableText result = Text.empty();
+
+        for (Text content : contents) {
             result.append(content);
+        }
+
+        return result;
+    }
+
+    public static MutableText of(List<MutableText> contents, String delimiter) {
+        if (contents.size() == 1)  return contents.getFirst();
+
+        MutableText result = Text.empty();
+        result.append(contents.getFirst());
+        MutableText delimiterText = Text.literal(delimiter);
+
+        for (int i = 1; i < contents.size(); i++) {
+            result.append(delimiterText);
+            result.append(contents.get(i));
         }
 
         return result;

@@ -2,6 +2,7 @@ package jhuanglululu.cmut;
 
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 
 public class Utility {
@@ -32,5 +33,9 @@ public class Utility {
             }
         }
         return count;
+    }
+
+    public static MutableText indent(int count) {
+        return Text.literal("  ".repeat(count));
     }
 }

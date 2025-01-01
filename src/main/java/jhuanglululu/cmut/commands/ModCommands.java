@@ -2,17 +2,24 @@ package jhuanglululu.cmut.commands;
 
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
+import jhuanglululu.cmut.Utility;
 import jhuanglululu.cmut.commands.args.FilePathArgumentType;
+import jhuanglululu.cmut.commands.utils.LongText;
 import net.fabricmc.fabric.api.command.v2.ArgumentTypeRegistry;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.command.argument.serialize.ConstantArgumentSerializer;
 import net.minecraft.server.command.ServerCommandSource;
+import net.minecraft.text.MutableText;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+
+import java.util.List;
 
 import static jhuanglululu.cmut.CommandUtils.MOD_ID;
 import static jhuanglululu.cmut.CommandUtils.LOGGER;
 import static jhuanglululu.cmut.commands.args.FilePathArgumentType.FOLDER_SUGGESTION;
 import static jhuanglululu.cmut.commands.args.FilePathArgumentType.FUNCTION_SUGGESTION;
+import static net.minecraft.server.command.FunctionCommand.SUGGESTION_PROVIDER;
 import static net.minecraft.server.command.CommandManager.argument;
 import static net.minecraft.server.command.CommandManager.literal;
 
@@ -39,8 +46,10 @@ public class ModCommands {
 
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> dispatcher.register(literal("docs")
                 .requires(source -> source.hasPermissionLevel(2))
-                .then(argument(CommandArgumentEnum.DOCS_COMMAND_ARG_1.getValue(), FilePathArgumentType.FilePath()).suggests(FUNCTION_SUGGESTION)
+                .then(argument(CommandArgumentEnum.DOCS_COMMAND_ARG_1.getValue(), FilePathArgumentType.FilePath()).suggests(SUGGESTION_PROVIDER)
                         .executes(ModCommands::handleCommandDocs))));
+
+        //CommandRegistrationCallback.EVENT.register(((dispatcher, registryAccess, environment) -> dispatcher.register(literal("test").executes(ModCommands::test))));
     }
 
     private static int handleCommandListFunction(CommandContext<ServerCommandSource> context, int args) {
@@ -56,6 +65,10 @@ public class ModCommands {
 
     private static int handleCommandDocs(CommandContext<ServerCommandSource> context) {
         DocsCommand.docs(context, FilePathArgumentType.getPath(context, CommandArgumentEnum.DOCS_COMMAND_ARG_1.getValue()));
+        return 1;
+    }
+
+    private static int test(CommandContext<ServerCommandSource> context) {
         return 1;
     }
 
