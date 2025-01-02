@@ -10,5 +10,25 @@
   "command-utils.command.docs.output.folder": "Folder: ",
   "command-utils.command.docs.output.hover.folder": "List all function inside: ",
 
+  "command-utils.command.docs.tag.author": "Author",
+  "command-utils.command.docs.tag.comment": "Comment",
+  "command-utils.command.docs.tag.date": "Date",
+  "command-utils.command.docs.tag.ensure": "Ensure",
+  "command-utils.command.docs.tag.example": "Example",
+  "command-utils.command.docs.tag.reference": "Reference",
+  "command-utils.command.docs.tag.require": "Require",
+  "command-utils.command.docs.tag.return": "Return",
+  "command-utils.command.docs.tag.see-also": "See Also",
+  "command-utils.command.docs.tag.update": "Update",
+  "command-utils.command.docs.tag.variable": "Variable",
+
+  "command-utils.command.docs.property.abstract": "Abstract",
+  "command-utils.command.docs.property.abstract.hover": "This function has no implementation",
+  "command-utils.command.docs.property.deprecated": "Deprecated",
+  "command-utils.command.docs.property.deprecated.hover": "This function is deprecated, please refer to ",
+  "command-utils.command.docs.property.deprecated.hover-null": "This function is deprecated",
+  "command-utils.command.docs.property.demo": "Demo",
+  "command-utils.command.docs.property.demo.hover": "This is function is only for demonstration purposes",
+
   "command-utils.error.parse-function": "Failed to parse function: %s"
 }

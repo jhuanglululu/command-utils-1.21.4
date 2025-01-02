@@ -1,9 +1,9 @@
 package jhuanglululu.cmut.commands;
 
 import com.mojang.brigadier.context.CommandContext;
-import jhuanglululu.cmut.Utility;
-import jhuanglululu.cmut.commands.docs.TagEntry;
-import jhuanglululu.cmut.commands.docs.TagParser;
+import jhuanglululu.cmut.commands.docs.InputParser;
+import jhuanglululu.cmut.commands.docs.tag.TagInterface;
+import jhuanglululu.cmut.commands.docs.tag.TagParser;
 import jhuanglululu.cmut.commands.utils.FilePath;
 import jhuanglululu.cmut.commands.utils.LongText;
 import net.minecraft.registry.RegistryKeys;
@@ -42,7 +42,9 @@ public class DocsCommand {
 
         try {
             List<String> docs = readDocs(function.get());
-            List<TagEntry> tags = TagParser.parseInput(docs);
+            List<TagInterface> tags = InputParser.parse(docs);
+
+            TagParser.sort(tags);
 
             printDocs(source, new FilePath(resourceID), tags);
         } catch (Exception e) {
@@ -62,19 +64,19 @@ public class DocsCommand {
             return docs;
         }
 
-        for (int i = 1; i < contents.size(); i++) {
-            String line = contents.get(i);
-
+        for (String line : contents) {
             if (line.startsWith("#")) {
                 docs.add(line.substring(2));
-            } else { break; }
+            } else {
+                break;
+            }
         }
 
         bufferedReader.close();
         return docs;
     }
 
-    public static void printDocs(ServerCommandSource source, FilePath file, List<TagEntry> tags) {
+    public static void printDocs(ServerCommandSource source, FilePath file, List<TagInterface> tags) {
         String functionName = file.getFile();
         String functionPath = file.folderToString();
 
@@ -97,6 +99,14 @@ public class DocsCommand {
                 Text.translatable("command-utils.command.docs.output.folder").formatted(Formatting.DARK_GREEN, Formatting.BOLD),
                 Text.literal(functionPath).formatted(Formatting.GRAY).styled(style -> style.withHoverEvent(folderHoverEvent).withClickEvent(folderClickEvent))));
 
-        source.sendMessage(LongText.of(List.of(header, fileInfo), "\n\n"));
+        List<MutableText> tagsTextList = new ArrayList<>();
+
+        for (TagInterface tag : tags) {
+            tagsTextList.add(tag.toText());
+        }
+
+        MutableText tagsText = LongText.of(tagsTextList, "\n\n");
+
+        source.sendMessage(LongText.of(List.of(header, fileInfo, tagsText), "\n\n"));
     }
 }

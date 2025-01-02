@@ -1,6 +1,8 @@
 package jhuanglululu.cmut;
 
 import jhuanglululu.cmut.commands.ModCommands;
+import jhuanglululu.cmut.commands.docs.property.PropertyParser;
+import jhuanglululu.cmut.commands.docs.tag.TagParser;
 import jhuanglululu.cmut.config.ServerConfig;
 import jhuanglululu.cmut.suggestion.FunctionArgumentTypeSuggestions;
 import net.fabricmc.api.ModInitializer;
@@ -16,6 +18,9 @@ public class CommandUtils implements ModInitializer {
     @Override
     public void onInitialize() {
         LOGGER.info("Made by: jhuanglululu!");
+
+        TagParser.registerTags();
+        PropertyParser.registerProperties();
 
         ServerConfig.registerConfig();
 

@@ -1,7 +1,10 @@
 package jhuanglululu.cmut.commands.docs.tag;
 
-import net.minecraft.text.Text;
+import net.minecraft.text.MutableText;
 
 public interface TagInterface {
-    Text toText();
+
+    MutableText toText();
+
+    int getPriority();
 }
