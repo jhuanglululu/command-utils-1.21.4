@@ -1,6 +1,8 @@
 
 # Command Utils
 
+###NOTE: 主要功能有了 但穩定性設定和其他的還沒弄好###
+
 **一個 1.21.4 的 Fabric 模組**
 * .mcfunction 搜尋
 * .mcfunction 註釋（docs/documentation)
@@ -11,7 +13,7 @@
 * 裝了你就是專家
 
 ## 備註
-因為有使用到其他人的代碼 所以`github` 上不會放 .jar 載點 如果需要模組可以自己下載原始碼來安裝或是透過 `Discord` 聯繫 `jhuanglululu`
+因為部分代碼是AI協助的 所以 `github` 上暫時不會放 .jar 載點 如果需要模組可以自己下載原始碼來安裝或是透過 `Discord` 聯繫 `jhuanglululu`
 
 ## 指令展示 (listfunction)
 <h1>
